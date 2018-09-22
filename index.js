@@ -6,16 +6,10 @@
  const mongoose = require("mongoose")
 
  const EasyPayWallet = "28828833"
- const BitcoinWallet = "680769754:AAFvusu4UO0LBQ8i5dYhZ4vbsw0JCpDr9RU"
+ const BitcoinWallet = "13Bi9FsmcFJnFtPJSCkAyXB2cy85YAnrPw"
 
  helper.logStart()
- logStart() {
-     console.log("Bot has been started ...")
- },
 
- getChatId(msg) {
-     return msg.chat.id
- }
  /*mongoose.Promise = global.Promise
  mongoose.connect(config.DB_URL, {
      useMongoClient: true
