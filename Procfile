@@ -1,1 +1,1 @@
-worker: node ./src/index.js
+bot: node src/index.js
