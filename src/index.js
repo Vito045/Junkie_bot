@@ -6,7 +6,7 @@
  const mongoose = require("mongoose")
 
  const EasyPayWallet = "28828833"
- const BitcoinWallet = "679062113:AAF6VFdV7p4EgHjJ5gb2xmWDzBzBQ8sd1i0"
+ const BitcoinWallet = "680769754:AAFvusu4UO0LBQ8i5dYhZ4vbsw0JCpDr9RU"
 
  helper.logStart()
 
