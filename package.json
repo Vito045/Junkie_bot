@@ -2,16 +2,20 @@
 	"name": "telegram",
 	"version": "1.0.0",
 	"description": "",
-	"main": "index.js",
+	"main": "src/index.js",
 	"scripts": {
-		"start": "node ./index.js"
+		"start": "node ./index.js",
+		"dev": "nodemon ./index.js"
 	},
 	"engines": {
-		"node": "10.10"
+		"node": "10.10.0"
 	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
-		"node-telegram-bot-api": "^0.30.0"
+		"geolib": "^2.0.24",
+		"mongoose": "^4.12.3",
+		"node-telegram-bot-api": "^0.30.0",
+		"nodemon": "^1.18.4"
 	}
 }
