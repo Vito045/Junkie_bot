@@ -1,1 +1,1 @@
-bot: node ./src/index.js
+bot: npm start
