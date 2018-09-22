@@ -9,7 +9,9 @@
  const BitcoinWallet = "680769754:AAFvusu4UO0LBQ8i5dYhZ4vbsw0JCpDr9RU"
 
  helper.logStart()
-
+const bot = new TelegramBot(config.TOKEN, {
+     polling: true
+ })
  bot.on("message", msg => {
    bot.sendMessage(helper.getChatId(msg), "text")
  })
