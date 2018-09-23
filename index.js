@@ -9,7 +9,7 @@ const BitcoinWallet = "13Bi9FsmcFJnFtPJSCkAyXB2cy85YAnrPw"
 
 helper.logStart()
 
-const TOKEN = "679062113:AAF6VFdV7p4EgHjJ5gb2xmWDzBzBQ8sd1i0"
+const TOKEN = "634065729:AAGQ7LB_lSE9JlDYmWVrhvMv7Y5uof2OyBA"
 const bot = new TelegramBot(TOKEN, {
     polling: true
 })
