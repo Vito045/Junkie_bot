@@ -2,7 +2,6 @@ const TelegramBot = require("node-telegram-bot-api")
 const helper = require("./helpers")
 const kb = require("./keyboard-buttons")
 const keyboard = require("./keyboard")
-const mongoose = require("mongoose")
 
 const EasyPayWallet = "28828833"
 const BitcoinWallet = "13Bi9FsmcFJnFtPJSCkAyXB2cy85YAnrPw"
