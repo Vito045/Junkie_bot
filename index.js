@@ -34,7 +34,7 @@ const  GoodSchema = new Schema({
 })
 mongoose.model("good", GoodSchema )
 const Good = mongoose.model("good")
-//database.goods.forEach(g => new Good(g).save())*/
+//database.goods.forEach(рg => new Good(g).save())*/
 
 //====================================
 
