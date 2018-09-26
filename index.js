@@ -43,9 +43,7 @@ function getRndInteger(min, max) {
 var Office;
 var Buy;
 var datum = new Date()
-var random = function() {
-    return Math.floor(Math.random() * (4000 - 300 + 1) ) + 300;
-};
+var random = Math.floor(Math.random() * (4000 - 300 + 1) ) + 300
 var callbackData;
 const bot = new TelegramBot(TOKEN, {
     polling: true
