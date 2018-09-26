@@ -37,7 +37,9 @@ const Good = mongoose.model("good")
 //database.goods.forEach(рg => new Good(g).save())*/
 
 //====================================
-
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
 var Office;
 var Buy;
 var datum = new Date()
@@ -656,7 +658,4 @@ function Buying(Name, price, value) {
     if(value === 1) return Easy
     else if(value === 2)return BTC
 
-}
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
