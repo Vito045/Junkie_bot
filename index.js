@@ -43,12 +43,16 @@ function getRndInteger(min, max) {
 var Office;
 var Buy;
 var datum = new Date()
-var random = Math.floor(Math.random() * (4000 - 300 + 1) ) + 300
+var random
 var callbackData;
 const bot = new TelegramBot(TOKEN, {
     polling: true
 })
 bot.onText(/\/start/,  msg => {
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
+    random = getRndInteger(300, 4000)
     const text = "Добро пожалувать в PcyX \n\n" +
         "Для получения помощи нажмите ➡️ /help\n" +
         "\n" +
