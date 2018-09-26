@@ -41,7 +41,7 @@ const Good = mongoose.model("good")
 var Office;
 var Buy;
 var datum = new Date()
-var random = getRndInteger(+(datum.getDate() + "0"), 1000);
+var random = getRndInteger(300, 1000);
 var callbackData;
 const bot = new TelegramBot(TOKEN, {
     polling: true
@@ -325,8 +325,8 @@ bot.on('message', msg => {
                 bot.sendMessage(chatId, GoodsName("🌈 MDMA M&Ms - 230 mg - 2шт,"), GoodsPrice(750, 7))
                 bot.sendMessage(chatId, GoodsName("🌈MDMA Qdance - 230 mg - 2шт,"), GoodsPrice(750, 8))
                 bot.sendMessage(chatId, GoodsName("🍄Грибы Pink Buffalo 1гр,"), GoodsPrice(300, 9))
-                bot.sendMessage(chatId, GoodsName("🍄🍄Грибы Pink Buffalo 3гр,"), GoodsPrice(850, 10))
-                bot.sendMessage(chatId, GoodsName("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт"), GoodsPrice(850, 11))
+                bot.sendMessage(chatId, GoodsName("🍄🍄Грибы Pink Buffalo 3гр,"), GoodsPrice(800, 10))
+                bot.sendMessage(chatId, GoodsName("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт"), GoodsPrice(250, 11))
                 bot.sendMessage(chatId, GoodsName("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт"), GoodsPrice(900, 12))
                 bot.on('callback_query', function (data) {
                     var answer = data.data
@@ -373,8 +373,8 @@ bot.on('message', msg => {
                         else if(compare == 7 ) bot.sendMessage(chatId, Buying("🌈 MDMA M&Ms - 230 mg - 2шт,", 750, money), {parse_mode: "HTML"})
                         else if(compare == 8 ) bot.sendMessage(chatId, Buying("🌈MDMA Qdance - 230 mg - 2шт,", 750, money), {parse_mode: "HTML"})
                         else if(compare == 9 ) bot.sendMessage(chatId, Buying("🍄Грибы Pink Buffalo 1гр,", 300, money), {parse_mode: "HTML"})
-                        else if(compare == 10 ) bot.sendMessage(chatId, Buying("🍄🍄Грибы Pink Buffalo 3гр,", 850, money), {parse_mode: "HTML"})
-                        else if(compare == 11 ) bot.sendMessage(chatId, Buying("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт", 850, money), {parse_mode: "HTML"})
+                        else if(compare == 10 ) bot.sendMessage(chatId, Buying("🍄🍄Грибы Pink Buffalo 3гр,", 800, money), {parse_mode: "HTML"})
+                        else if(compare == 11 ) bot.sendMessage(chatId, Buying("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт", 250, money), {parse_mode: "HTML"})
                         else if(compare == 12 ) bot.sendMessage(chatId, Buying("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт", 900, money), {parse_mode: "HTML"})
                     }
                     /*if(compare == 1 ) bot.sendMessage(chatId, Buying("Кокс", 105, money), {parse_mode: "HTML"})
@@ -628,7 +628,7 @@ function Buying(Name, price, value) {
         "Заказ <strong>№" + random + "</strong> запомните его.\n" +
         "\n" +
         "После оплаты нажмите \n" +
-        "👉 /check_" + random +", бот проверит оплату, подтвердит заказ и сразу и выдаст адрес. \n" +
+        "👉 /check_" + random +", бот проверит оплату, подтвердит заказ и сразу выдаст адрес. \n" +
         "\n" +
         "Чтобы отказаться от заказа, нажмите 👉 /start\n" +
         "\n" +
@@ -647,7 +647,7 @@ function Buying(Name, price, value) {
         "Заказ <strong>№" + random + "</strong> запомните его.\n" +
         "\n" +
         "После оплаты нажмите \n" +
-        "👉 /check_" + random +", бот проверит оплату, подтвердит заказ и сразу и выдаст адрес. \n" +
+        "👉 /check_" + random +", бот проверит оплату, подтвердит заказ и сразу выдаст адрес. \n" +
         "\n" +
         "Чтобы отказаться от заказа, нажмите 👉 /start\n" +
         "\n" +
