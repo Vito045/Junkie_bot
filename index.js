@@ -38,7 +38,7 @@ const Good = mongoose.model("good")
 
 //====================================
 function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) ) + min;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 var Office;
 var Buy;
@@ -48,9 +48,9 @@ var callbackData;
 const bot = new TelegramBot(TOKEN, {
     polling: true
 })
-bot.onText(/\/start/,  msg => {
+bot.onText(/\/start/, msg => {
     function getRndInteger(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) ) + min;
+        return Math.floor(Math.random() * (max - min + 1)) + min;
     }
     random = getRndInteger(300, 4000)
     const text = "Добро пожалувать в PcyX \n\n" +
@@ -120,14 +120,13 @@ bot.onText(/\/start/,  msg => {
 })
 bot.on('message', msg => {
     console.log('Working', msg.from.first_name)
-    const chatId =  helper.getChatId(msg)
 
 
-    switch(msg.text) {
+    switch (msg.text) {
         case kb.offices.Off1:
             Office = 1
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -137,8 +136,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off2:
             Office = 2
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -148,8 +147,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off3:
             Office = 3
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -159,8 +158,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off4:
             Office = 4
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -170,8 +169,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off5:
             Office = 5
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -181,8 +180,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off5:
             Office = 5
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -192,8 +191,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off6:
             Office = 6
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -203,8 +202,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off7:
             Office = 7
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -214,8 +213,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off8:
             Office = 8
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -225,8 +224,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off9:
             Office = 9
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -236,8 +235,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off10:
             Office = 10
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -247,8 +246,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off11:
             Office = 11
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -258,8 +257,8 @@ bot.on('message', msg => {
             break
         case kb.offices.Off12:
             Office = 12
-            bot.sendMessage(msg.chat.id,"Ви вибрали район номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
+            bot.sendMessage(msg.chat.id, "Ви вибрали район номер " + Office)
+            bot.sendMessage(msg.chat.id, "Меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -267,44 +266,44 @@ bot.on('message', msg => {
                 }
             })
             break
-        /*case kb.offices.Off13:
-            Office = 13
-            bot.sendMessage(msg.chat.id,"Ви вибрали відділення номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
-                reply_markup: {
-                    keyboard: keyboard.home,
-                    one_time_keyboard: true,
-                    resize_keyboard: true
-                }
-            })
-            break
-        case kb.offices.Off14:
-            Office = 14
-            bot.sendMessage(msg.chat.id,"Ви вибрали відділення номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
-                reply_markup: {
-                    keyboard: keyboard.home,
-                    one_time_keyboard: true,
-                    resize_keyboard: true
-                }
-            })
-            break
-        case kb.offices.Off15:
-            Office = 15
-            bot.sendMessage(msg.chat.id,"Ви вибрали відділення номер " + Office)
-            bot.sendMessage(chatId,"Меню", {
-                reply_markup: {
-                    keyboard: keyboard.home,
-                    one_time_keyboard: true,
-                    resize_keyboard: true
-                }
-            })
-            break*/
+            /*case kb.offices.Off13:
+                Office = 13
+                bot.sendMessage(msg.chat.id,"Ви вибрали відділення номер " + Office)
+                bot.sendMessage(msg.chat.id,"Меню", {
+                    reply_markup: {
+                        keyboard: keyboard.home,
+                        one_time_keyboard: true,
+                        resize_keyboard: true
+                    }
+                })
+                break
+            case kb.offices.Off14:
+                Office = 14
+                bot.sendMessage(msg.chat.id,"Ви вибрали відділення номер " + Office)
+                bot.sendMessage(msg.chat.id,"Меню", {
+                    reply_markup: {
+                        keyboard: keyboard.home,
+                        one_time_keyboard: true,
+                        resize_keyboard: true
+                    }
+                })
+                break
+            case kb.offices.Off15:
+                Office = 15
+                bot.sendMessage(msg.chat.id,"Ви вибрали відділення номер " + Office)
+                bot.sendMessage(msg.chat.id,"Меню", {
+                    reply_markup: {
+                        keyboard: keyboard.home,
+                        one_time_keyboard: true,
+                        resize_keyboard: true
+                    }
+                })
+                break*/
 
     }
-    switch(msg.text) {
+    switch (msg.text) {
         case kb.home.goods:
-            if(!(Office > 0)){
+            if (!(Office > 0)) {
                 bot.sendMessage(helper.getChatId(msg), moronText, {
                     reply_markup: {
                         keyboard: keyboard.offices,
@@ -312,8 +311,8 @@ bot.on('message', msg => {
                         resize_keyboard: true
                     }
                 })
-            }else {
-                bot.sendMessage(chatId, "Товары", {
+            } else {
+                bot.sendMessage(msg.chat.id, "Товары", {
                     reply_markup: {
                         keyboard: keyboard.goods,
                         one_time_keyboard: true,
@@ -321,71 +320,93 @@ bot.on('message', msg => {
                     }
                 })
                 var campare
-                bot.sendMessage(chatId, GoodsName("🍚 Амфетамин Фосфат 1гр.,"), GoodsPrice(350, 1))
-                bot.sendMessage(chatId, GoodsName("🌳 Шишки Serious 1 гр.,"), GoodsPrice(400, 2))
-                bot.sendMessage(chatId, GoodsName("🌳🌳Шишки Serious 6 - 90% Sat / 10% Ind - 5гр,"), GoodsPrice(1600, 3))
-                bot.sendMessage(chatId, GoodsName("🌳Шишки WW 1 гр.,"), GoodsPrice(300, 4))
-                bot.sendMessage(chatId, GoodsName("🌳🌳Шишки WW - 5гр,\n" +
+                bot.sendMessage(msg.chat.id, GoodsName("🍚 Амфетамин Фосфат 1гр.,"), GoodsPrice(350, 1))
+                bot.sendMessage(msg.chat.id, GoodsName("🌳 Шишки Serious 1 гр.,"), GoodsPrice(400, 2))
+                bot.sendMessage(msg.chat.id, GoodsName("🌳🌳Шишки Serious 6 - 90% Sat / 10% Ind - 5гр,"), GoodsPrice(1600, 3))
+                bot.sendMessage(msg.chat.id, GoodsName("🌳Шишки WW 1 гр.,"), GoodsPrice(300, 4))
+                bot.sendMessage(msg.chat.id, GoodsName("🌳🌳Шишки WW - 5гр,\n" +
                     "🎉🎉Акция для ЧИЛЛ-тусы!"), GoodsPrice(1300, 5))
-                bot.sendMessage(chatId, GoodsName("🍚🍚Амфетамин Фосфат 3гр.,"), GoodsPrice(850, 6))
-                bot.sendMessage(chatId, GoodsName("🌈 MDMA M&Ms - 230 mg - 2шт,"), GoodsPrice(750, 7))
-                bot.sendMessage(chatId, GoodsName("🌈MDMA Qdance - 230 mg - 2шт,"), GoodsPrice(750, 8))
-                bot.sendMessage(chatId, GoodsName("🍄Грибы Pink Buffalo 1гр,"), GoodsPrice(300, 9))
-                bot.sendMessage(chatId, GoodsName("🍄🍄Грибы Pink Buffalo 3гр,"), GoodsPrice(800, 10))
-                bot.sendMessage(chatId, GoodsName("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт"), GoodsPrice(250, 11))
-                bot.sendMessage(chatId, GoodsName("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт"), GoodsPrice(900, 12))
-                bot.on('callback_query', function (data) {
+                bot.sendMessage(msg.chat.id, GoodsName("🍚🍚Амфетамин Фосфат 3гр.,"), GoodsPrice(850, 6))
+                bot.sendMessage(msg.chat.id, GoodsName("🌈 MDMA M&Ms - 230 mg - 2шт,"), GoodsPrice(750, 7))
+                bot.sendMessage(msg.chat.id, GoodsName("🌈MDMA Qdance - 230 mg - 2шт,"), GoodsPrice(750, 8))
+                bot.sendMessage(msg.chat.id, GoodsName("🍄Грибы Pink Buffalo 1гр,"), GoodsPrice(300, 9))
+                bot.sendMessage(msg.chat.id, GoodsName("🍄🍄Грибы Pink Buffalo 3гр,"), GoodsPrice(800, 10))
+                bot.sendMessage(msg.chat.id, GoodsName("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт"), GoodsPrice(250, 11))
+                bot.sendMessage(msg.chat.id, GoodsName("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт"), GoodsPrice(900, 12))
+                bot.on('callback_query', function(data) {
                     var answer = data.data
 
                     console.log(answer)
-                    if(answer > 0) {
+                    if (answer > 0) {
                         console.log("11")
                         compare = answer
                         console.log(compare)
                     }
 
                 })
-                bot.on('callback_query', function (data) {
-                    if(data.data > 0){
-                        bot.sendMessage(chatId, "Выберите способ оплаты", {
+                bot.on('callback_query', function(data) {
+                    if (data.data > 0) {
+                        bot.sendMessage(msg.chat.id, "Выберите способ оплаты", {
                             reply_markup: {
                                 inline_keyboard: [
-                                    [   {
+                                    [{
                                         text: "EasyPay",
                                         callback_data: "Easy"
-                                    },
-                                        {
-                                            text:"Bitcoin",
-                                            callback_data: "BTC"
-                                        }
-                                    ]
+                                    }, {
+                                        text: "Bitcoin",
+                                        callback_data: "BTC"
+                                    }]
                                 ]
                             }
                         })
                     }
                 })
-                bot.on("callback_query", function (data) {
+                bot.on("callback_query", function(data) {
                     var money
-                    if(data.data == "Easy") money = 1
-                    else if(data.data == "BTC") money = 2
+                    if (data.data == "Easy") money = 1
+                    else if (data.data == "BTC") money = 2
                     console.log(data.data)
-                    if((money == 1) || (money == 2)){
-                        if(compare == 1 ) bot.sendMessage(chatId, Buying("🍚 Амфетамин Фосфат 1гр.,", 350, money), {parse_mode: "HTML"})
-                        else if(compare == 2 ) bot.sendMessage(chatId, Buying("🌳 Шишки Serious 1 гр.,", 400, money), {parse_mode: "HTML"})
-                        else if(compare == 3 ) bot.sendMessage(chatId, Buying("🌳🌳Шишки Serious 6 - 90% Sat / 10% Ind - 5гр,", 1600, money), {parse_mode: "HTML"})
-                        else if(compare == 4 ) bot.sendMessage(chatId, Buying("🌳Шишки WW 1 гр.,", 300, money), {parse_mode: "HTML"})
-                        else if(compare == 5 ) bot.sendMessage(chatId, Buying("🌳🌳Шишки WW - 5гр,\n", 1300, money), {parse_mode: "HTML"})
-                        else if(compare == 6 ) bot.sendMessage(chatId, Buying("🍚🍚Амфетамин Фосфат 3гр.,", 850, money), {parse_mode: "HTML"})
-                        else if(compare == 7 ) bot.sendMessage(chatId, Buying("🌈 MDMA M&Ms - 230 mg - 2шт,", 750, money), {parse_mode: "HTML"})
-                        else if(compare == 8 ) bot.sendMessage(chatId, Buying("🌈MDMA Qdance - 230 mg - 2шт,", 750, money), {parse_mode: "HTML"})
-                        else if(compare == 9 ) bot.sendMessage(chatId, Buying("🍄Грибы Pink Buffalo 1гр,", 300, money), {parse_mode: "HTML"})
-                        else if(compare == 10 ) bot.sendMessage(chatId, Buying("🍄🍄Грибы Pink Buffalo 3гр,", 800, money), {parse_mode: "HTML"})
-                        else if(compare == 11 ) bot.sendMessage(chatId, Buying("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт", 250, money), {parse_mode: "HTML"})
-                        else if(compare == 12 ) bot.sendMessage(chatId, Buying("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт", 900, money), {parse_mode: "HTML"})
+                    if ((money == 1) || (money == 2)) {
+                        if (compare == 1) bot.sendMessage(msg.chat.id, Buying("🍚 Амфетамин Фосфат 1гр.,", 350, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 2) bot.sendMessage(msg.chat.id, Buying("🌳 Шишки Serious 1 гр.,", 400, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 3) bot.sendMessage(msg.chat.id, Buying("🌳🌳Шишки Serious 6 - 90% Sat / 10% Ind - 5гр,", 1600, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 4) bot.sendMessage(msg.chat.id, Buying("🌳Шишки WW 1 гр.,", 300, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 5) bot.sendMessage(msg.chat.id, Buying("🌳🌳Шишки WW - 5гр,\n", 1300, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 6) bot.sendMessage(msg.chat.id, Buying("🍚🍚Амфетамин Фосфат 3гр.,", 850, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 7) bot.sendMessage(msg.chat.id, Buying("🌈 MDMA M&Ms - 230 mg - 2шт,", 750, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 8) bot.sendMessage(msg.chat.id, Buying("🌈MDMA Qdance - 230 mg - 2шт,", 750, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 9) bot.sendMessage(msg.chat.id, Buying("🍄Грибы Pink Buffalo 1гр,", 300, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 10) bot.sendMessage(msg.chat.id, Buying("🍄🍄Грибы Pink Buffalo 3гр,", 800, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 11) bot.sendMessage(msg.chat.id, Buying("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт", 250, money), {
+                            parse_mode: "HTML"
+                        })
+                        else if (compare == 12) bot.sendMessage(msg.chat.id, Buying("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт", 900, money), {
+                            parse_mode: "HTML"
+                        })
                     }
-                    /*if(compare == 1 ) bot.sendMessage(chatId, Buying("Кокс", 105, money), {parse_mode: "HTML"})
-                    else if(compare == 2 ) bot.sendMessage(chatId, Buying("ЛСД", 150, money), {parse_mode: "HTML"})
-                    else if(compare == 3 ) bot.sendMessage(chatId, Buying("Неідомо", 125, money), {parse_mode: "HTML"})*/
+                    /*if(compare == 1 ) bot.sendMessage(msg.chat.id, Buying("Кокс", 105, money), {parse_mode: "HTML"})
+                    else if(compare == 2 ) bot.sendMessage(msg.chat.id, Buying("ЛСД", 150, money), {parse_mode: "HTML"})
+                    else if(compare == 3 ) bot.sendMessage(msg.chat.id, Buying("Неідомо", 125, money), {parse_mode: "HTML"})*/
                 })
                 //bot.action("2")
                 //bot.on("callback_query", data => {
@@ -401,7 +422,7 @@ bot.on('message', msg => {
                      comparedator = 3;
                      console.log(comparedator)
                  }
-                 bot.sendMessage(chatId, "Выбирите способ оплаты", {
+                 bot.sendMessage(msg.chat.id, "Выбирите способ оплаты", {
                      reply_markup: {
                          inline_keyboard: [
                              [   {
@@ -422,13 +443,13 @@ bot.on('message', msg => {
                      console.log(data.data)
                      if(data.data == "Easy") Buy = 1
                      else if(data.data == "BTC") Buy = 2
-                     if(comparedator == 1 ) bot.sendMessage(chatId, Buying("Кокс", 105, Buy), {parse_mode: "HTML"})
-                     else if(comparedator == 2 ) bot.sendMessage(chatId, Buying("ЛСД", 150, Buy), {parse_mode: "HTML"})
-                     else if(comparedator == 3 ) bot.sendMessage(chatId, Buying("Неідомо", 125, Buy), {parse_mode: "HTML"})
+                     if(comparedator == 1 ) bot.sendMessage(msg.chat.id, Buying("Кокс", 105, Buy), {parse_mode: "HTML"})
+                     else if(comparedator == 2 ) bot.sendMessage(msg.chat.id, Buying("ЛСД", 150, Buy), {parse_mode: "HTML"})
+                     else if(comparedator == 3 ) bot.sendMessage(msg.chat.id, Buying("Неідомо", 125, Buy), {parse_mode: "HTML"})
                  })*/
                 /*switch (callback) {
                     case "1":
-                        bot.sendMessage(chatId, "Выбирите способ оплаты", {
+                        bot.sendMessage(msg.chat.id, "Выбирите способ оплаты", {
                             reply_markup: {
                                 inline_keyboard: [
                                     [   {
@@ -447,7 +468,7 @@ bot.on('message', msg => {
                         console.log(1)
                         break
                     case "2":
-                        bot.sendMessage(chatId, "Выбирите способ оплаты", {
+                        bot.sendMessage(msg.chat.id, "Выбирите способ оплаты", {
                             reply_markup: {
                                 inline_keyboard: [
                                     [   {
@@ -466,7 +487,7 @@ bot.on('message', msg => {
                         console.log(2)
                         break
                     case "3":
-                        bot.sendMessage(chatId, "Выбирите способ оплаты", {
+                        bot.sendMessage(msg.chat.id, "Выбирите способ оплаты", {
                             reply_markup: {
                                 inline_keyboard: [
                                     [   {
@@ -489,15 +510,16 @@ bot.on('message', msg => {
                     callbackData = datas.data
                     if(callbackData == "Easy") Buy = 1
                     else if(callbackData == "BTC") Buy = 2
-                    if(comparedator == 1 ) bot.sendMessage(chatId, Buying("Кокс", 105, Buy), {parse_mode: "HTML"})
-                    else if(comparedator == 2 ) bot.sendMessage(chatId, Buying("ЛСД", 150, Buy), {parse_mode: "HTML"})
-                    else if(comparedator == 3 ) bot.sendMessage(chatId, Buying("Неідомо", 125, Buy), {parse_mode: "HTML"})
+                    if(comparedator == 1 ) bot.sendMessage(msg.chat.id, Buying("Кокс", 105, Buy), {parse_mode: "HTML"})
+                    else if(comparedator == 2 ) bot.sendMessage(msg.chat.id, Buying("ЛСД", 150, Buy), {parse_mode: "HTML"})
+                    else if(comparedator == 3 ) bot.sendMessage(msg.chat.id, Buying("Неідомо", 125, Buy), {parse_mode: "HTML"})
                 })*/
                 //})
-                /*sendGoodsByQuery(chatId)*/}
+                /*sendGoodsByQuery(msg.chat.id)*/
+            }
             break
         case kb.back:
-            bot.sendMessage(chatId, "Головне меню", {
+            bot.sendMessage(msg.chat.id, "Головне меню", {
                 reply_markup: {
                     keyboard: keyboard.home,
                     one_time_keyboard: true,
@@ -506,7 +528,7 @@ bot.on('message', msg => {
             })
             break
         case kb.home.settings:
-            bot.sendMessage(chatId, "Настройки", {
+            bot.sendMessage(msg.chat.id, "Настройки", {
                 reply_markup: {
                     keyboard: keyboard.settings,
                     one_time_keyboard: true,
@@ -515,7 +537,7 @@ bot.on('message', msg => {
             })
             break
         case kb.settings.office:
-            bot.sendMessage(chatId, "Вибор района", {
+            bot.sendMessage(msg.chat.id, "Вибор района", {
                 reply_markup: {
                     keyboard: keyboard.offices,
                     one_time_keyboard: true,
@@ -524,7 +546,7 @@ bot.on('message', msg => {
             })
             break
         case kb.office:
-            bot.sendMessage(chatId, "Вибор района", {
+            bot.sendMessage(msg.chat.id, "Вибор района", {
                 reply_markup: {
                     keyboard: keyboard.offices,
                     one_time_keyboard: true,
@@ -537,7 +559,7 @@ bot.on('message', msg => {
     //if(Office > 0 && Office < 15) bot.sendMessage(msg.chat.id,"Ви вибрали відділення номер " + Office)
 })
 
-bot.onText(/\/check/, msg =>{
+bot.onText(/\/check/, msg => {
     const text = "К сожалению, платеж не найден. Если вы произвели оплату, но видите это сообщение, подождите 5 минут и проверьте оплату еще раз  \n" +
         "\n" +
         "♦️ВНИМАТЕЛЬНО читайте инструкцию по оплате на вкладке /help♦️\n" +
@@ -546,12 +568,12 @@ bot.onText(/\/check/, msg =>{
         "➡️ /start, либо напишите любое сообщение."
     bot.sendMessage(helper.getChatId(msg), text)
 })
-bot.onText(/\/lastorder/, msg =>{
+bot.onText(/\/lastorder/, msg => {
     const text = "У вас нет заказов.\n" +
         "Нажмите 👉 /start для того, чтобы вернуться к выбору отделения."
     bot.sendMessage(helper.getChatId(msg), text)
 })
-bot.onText(/\/settings/, msg =>{
+bot.onText(/\/settings/, msg => {
     bot.sendMessage(helper.getChatId(msg), "Настройки", {
         reply_markup: {
             keyboard: keyboard.settings,
@@ -560,7 +582,7 @@ bot.onText(/\/settings/, msg =>{
         }
     })
 })
-bot.onText(/\/office/, msg =>{
+bot.onText(/\/office/, msg => {
     bot.sendMessage(helper.getChatId(msg), "Вибор района", {
         reply_markup: {
             keyboard: keyboard.offices,
@@ -569,7 +591,7 @@ bot.onText(/\/office/, msg =>{
         }
     })
 })
-bot.onText(/\/help/, msg =>{
+bot.onText(/\/help/, msg => {
     bot.sendMessage(helper.getChatId(msg), "Добро пожаловать! \n" +
         "Уважаемый клиент, будьте внимательны при оплате💰 и выборе✔️ товара.\n" +
         "Перед покупкой товара, бот предложит Вам город, товар и удобный для Вас район, после чего, выдаст реквизиты для оплаты.\n" +
@@ -584,21 +606,21 @@ bot.onText(/\/help/, msg =>{
         "Для того, чтобы вернуться на стартовую страницу к выбору городов, просто нажмите /start или напишите любое сообщение.\n" +
         "\n" +
         "Приятных покупок!🚀🚀🚀", {
-        reply_markup: {
-            keyboard: keyboard.home,
-            one_time_keyboard: true,
-            resize_keyboard: true
-        }
-    })
+            reply_markup: {
+                keyboard: keyboard.home,
+                one_time_keyboard: true,
+                resize_keyboard: true
+            }
+        })
 })
-/*function sendGoodsByQuery(chatId, query) {
+/*function sendGoodsByQuery(msg.chat.id, query) {
     Good.find(query).then(goods => {
         const html = goods.map((g, i) => {
             return g.name + "\n"+
                    g.description + "\n"
         }).join("\n")
 
-        bot.sendMessage(chatId, html, {
+        bot.sendMessage(msg.chat.id, html, {
                 parse_mode: "HTML"
         })
     })
@@ -607,6 +629,7 @@ function GoodsName(Name) {
     var texts = "<strong> " + Name + " </strong>"
     return texts
 }
+
 function GoodsPrice(Price, data) {
     var price = {
         reply_markup: {
@@ -621,20 +644,21 @@ function GoodsPrice(Price, data) {
     }
     return price
 }
+
 function Buying(Name, price, value) {
     const Easy = "<strong>Вы приобретаете</strong>\n" +
         Name +
         "\n💰 Стоимость " + price + " грн. 💰\n" +
         "🏠 района номер " + Office + "\n" +
-        "( для смены товара нажмите 👉 /shop ) \n"+
-        "( для смены района нажмите 👉 /settings ) \n\n"+
+        "( для смены товара нажмите 👉 /shop ) \n" +
+        "( для смены района нажмите 👉 /settings ) \n\n" +
         "Для приобретения выбранного товара,\n" +
         "оплатите <strong>" + price + "</strong> грн на счет EasyPay:\n <strong>" +
-        EasyPayWallet + "</strong>\n\n"+
+        EasyPayWallet + "</strong>\n\n" +
         "Заказ <strong>№" + random + "</strong> запомните его.\n" +
         "\n" +
         "После оплаты нажмите \n" +
-        "👉 /check_" + random +", бот проверит оплату, подтвердит заказ и сразу выдаст адрес. \n" +
+        "👉 /check_" + random + ", бот проверит оплату, подтвердит заказ и сразу выдаст адрес. \n" +
         "\n" +
         "Чтобы отказаться от заказа, нажмите 👉 /start\n" +
         "\n" +
@@ -644,8 +668,8 @@ function Buying(Name, price, value) {
         Name +
         "\n💰 Стоимость " + price + " грн. 💰\n" +
         "🏠 район номер " + Office + "\n" +
-        "( для смены товара нажмите 👉 /shop ) \n"+
-        "( для смены района нажмите 👉 /settings ) \n\n"+
+        "( для смены товара нажмите 👉 /shop ) \n" +
+        "( для смены района нажмите 👉 /settings ) \n\n" +
         "Для приобретения выбранного товара,\n" +
         "оплатите <strong>" + (price * 0.0000055) + "</strong> на Bitcoin кошелек:\n" +
         "<strong>" + BitcoinWallet + "</strong>\n" +
@@ -653,13 +677,13 @@ function Buying(Name, price, value) {
         "Заказ <strong>№" + random + "</strong> запомните его.\n" +
         "\n" +
         "После оплаты нажмите \n" +
-        "👉 /check_" + random +", бот проверит оплату, подтвердит заказ и сразу выдаст адрес. \n" +
+        "👉 /check_" + random + ", бот проверит оплату, подтвердит заказ и сразу выдаст адрес. \n" +
         "\n" +
         "Чтобы отказаться от заказа, нажмите 👉 /start\n" +
         "\n" +
         "Для того, чтобы посмотреть последний Ваш заказ\n" +
         "нажмите 👉 /lastorder"
-    if(value === 1) return Easy
-    else if(value === 2)return BTC
+    if (value === 1) return Easy
+    else if (value === 2) return BTC
 
 }
