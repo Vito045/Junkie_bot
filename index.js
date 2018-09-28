@@ -346,7 +346,7 @@ bot.on('message', msg => {
                 })
                 bot.on('callback_query', function(data) {
                     if (data.data > 0) {
-                        bot.sendMessage(msg.from.id, "Выберите способ оплаты", {
+                        bot.sendMessage(msg.chat.id, "Выберите способ оплаты", {
                             reply_markup: {
                                 inline_keyboard: [
                                     [{
