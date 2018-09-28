@@ -40,15 +40,19 @@ const Good = mongoose.model("good")
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-var Office;
-var Buy;
 var datum = new Date()
 var random
-var callbackData;
+
+var money
+var compare
 const bot = new TelegramBot(TOKEN, {
     polling: true
 })
 bot.onText(/\/start/, msg => {
+    var Office;
+    var Buy;
+    var callbackData;
+
     function getRndInteger(min, max) {
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -120,7 +124,6 @@ bot.onText(/\/start/, msg => {
 })
 bot.on('message', msg => {
     console.log('Working', msg.from.first_name)
-
 
     switch (msg.text) {
         case kb.offices.Off1:
@@ -303,23 +306,155 @@ bot.on('message', msg => {
     }
     switch (msg.text) {
         case kb.home.goods:
-            if (!(Office > 0)) {
-                bot.sendMessage(helper.getChatId(msg), moronText, {
-                    reply_markup: {
-                        keyboard: keyboard.offices,
-                        one_time_keyboard: true,
-                        resize_keyboard: true
-                    }
-                })
-            } else {
-                bot.sendMessage(msg.chat.id, "Товары", {
+            if (false) {
+            }else {
+                var goodsText = "Товары \n" +
+                    "🍚 Амфетамин Фосфат 1гр.,\n" +
+                    "\n" +
+                    "💰 Цена: 350 грн.\n" +
+                    "Купить 👉 /buy1\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    "🌳 Шишки Serious 1 гр.,\n" +
+                    "\n" +
+                    "💰 Цена: 400 грн.\n" +
+                    "Купить 👉 /buy2\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    " 🌳🌳Шишки Serious 6 - 90% Sat / 10% Ind - 5гр,\n" +
+                    "\n" +
+                    "💰 Цена: 1600 грн.\n" +
+                    "Купить 👉 /buy3\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    " 🌳Шишки WW 1 гр.,\n" +
+                    "\n" +
+                    "💰 Цена: 300 грн.\n" +
+                    "Купить 👉 /buy4\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    " 🌳🌳Шишки WW - 5гр,\n" +
+                    "🎉🎉Акция для ЧИЛЛ-тусы!\n" +
+                    "\n" +
+                    "💰 Цена: 1300 грн.\n" +
+                    "Купить 👉 /buy5\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    " 🍚🍚Амфетамин Фосфат 3гр.,\n" +
+                    "\n" +
+                    "💰 Цена: 850 грн.\n" +
+                    "Купить 👉 /buy6\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    "🌈 MDMA M&Ms - 230 mg - 2шт,\n" +
+                    "\n" +
+                    "💰 Цена: 750 грн.\n" +
+                    "Купить 👉 /buy7\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    "🌈MDMA Qdance - 230 mg - 2шт,\n" +
+                    "\n" +
+                    "💰 Цена: 750 грн.\n" +
+                    "Купить 👉 /buy8\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    "🍄Грибы Pink Buffalo 1гр,\n" +
+                    "\n" +
+                    "💰 Цена: 300 грн.\n" +
+                    "Купить 👉 /buy9\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    "🍄🍄Грибы Pink Buffalo 3гр,\n" +
+                    "\n" +
+                    "💰 Цена: 800 грн.\n" +
+                    "Купить 👉 /buy10\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    "♦️👁‍🗨♦️LSD-25 160 mkg -1 шт\n" +
+                    "\n" +
+                    "💰 Цена: 250 грн.\n" +
+                    "Купить 👉 /buy11\n" +
+                    "➖➖➖➖➖➖➖➖➖➖\n" +
+                    "👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт\n" +
+                    "\n" +
+                    "💰 Цена:  900 грн.\n" +
+                    "Купить 👉 /buy12"
+                bot.sendMessage(msg.chat.id, goodsText, {
                     reply_markup: {
                         keyboard: keyboard.goods,
                         one_time_keyboard: true,
                         resize_keyboard: true
                     }
+                }).then((msg) => {
+                    bot.onText(/\/buy/, msg => {
+                        switch (msg.text) {
+                            case "/buy1":
+                                compare = 1
+                                break
+                            case "/buy2":
+                                compare = 2
+                                break
+                            case "/buy3":
+                                compare = 3
+                                break
+                            case "/buy4":
+                                compare = 4
+                                break
+                            case "/buy5":
+                                compare = 5
+                                break
+                            case "/buy6":
+                                compare = 6
+                                break
+                            case "/buy7":
+                                compare = 7
+                                break
+                            case "/buy8":
+                                compare = 8
+                                break
+                            case "/buy9":
+                                compare = 9
+                                break
+                            case "/buy10":
+                                compare = 10
+                                break
+                            case "/buy11":
+                                compare = 11
+                                break
+                            case "/buy12":
+                                compare = 12
+                                break
+                        }
+
+                    })
+                    /*
+
+                    bot.onText(/Bitcoin/, msg => {
+                        switch (msg.text) {
+                            case kb.payment.BTC:
+                                money = 2
+                                console.log(money)
+                                break
+                            case kb.payment.EasyPay:
+                                money = "EasyPay"
+                                console.log(money)
+                                break
+                        }
+                        if(money == 2 && compare == true){
+                            bot.sendMessage(msg.chat.id, msg.text)
+                        }
+                    })
+                    bot.onText(/EasyPay/, msg => {
+                        switch (msg.text) {
+                            case kb.payment.BTC:
+                                money = "Bitcoin"
+                                console.log(money)
+                                break
+                            case kb.payment.EasyPay:
+                                money = "EasyPay"
+                                console.log(money)
+                                break
+                        }
+                    })*/
                 })
-                var campare
+
+
+
+
+
+            }
+
+                /*var some = 1
                 bot.sendMessage(msg.chat.id, GoodsName("🍚 Амфетамин Фосфат 1гр.,"), GoodsPrice(350, 1))
                 bot.sendMessage(msg.chat.id, GoodsName("🌳 Шишки Serious 1 гр.,"), GoodsPrice(400, 2))
                 bot.sendMessage(msg.chat.id, GoodsName("🌳🌳Шишки Serious 6 - 90% Sat / 10% Ind - 5гр,"), GoodsPrice(1600, 3))
@@ -333,39 +468,105 @@ bot.on('message', msg => {
                 bot.sendMessage(msg.chat.id, GoodsName("🍄🍄Грибы Pink Buffalo 3гр,"), GoodsPrice(800, 10))
                 bot.sendMessage(msg.chat.id, GoodsName("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт"), GoodsPrice(250, 11))
                 bot.sendMessage(msg.chat.id, GoodsName("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт"), GoodsPrice(900, 12))
-                bot.on('callback_query', function(data) {
-                    var answer = data.data
-
-                    console.log(answer)
-                    if (answer > 0) {
-                        console.log("11")
-                        compare = answer
-                        console.log(compare)
-                    }
-
-                })
-                bot.on('callback_query', function(data) {
-                    if (data.data > 0) {
-                        bot.sendMessage(msg.from.id, "Выберите способ оплаты", {
+                bot.on('callback_query', function(datas) {
+                    var compare = datas.data
+                    console.log(compare)
+                    if (some == 1) {
+                        var money
+                        bot.sendMessage(msg.chat.id, "Выберите способ оплаты", {
                             reply_markup: {
-                                inline_keyboard: [
-                                    [{
-                                        text: "EasyPay",
-                                        callback_data: "Easy"
-                                    }, {
-                                        text: "Bitcoin",
-                                        callback_data: "BTC"
-                                    }]
-                                ]
+                                keyboard: keyboard.payment,
+                                one_time_keyboard: true,
+                                resize_keyboard: true
                             }
                         })
+                        bot.on("message", msg => {
+                            switch (msg.text) {
+                                case kb.payment.BTC:
+                                    money = "Bitcoin"
+                                    break
+                                case kb.payment.EasyPay:
+                                    money = "EasyPay"
+                                    break
+                            }
+
+
+                        })
+                        console.log(money)
+                        bot.onText(/Bitcoin/, msg => {
+                            if (compare == 1) bot.sendMessage(helper.getChatId(msg), Buying("🍚 Амфетамин Фосфат 1гр.,", 350, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 2) bot.sendMessage(msg.chat.id, Buying("🌳 Шишки Serious 1 гр.,", 400, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 3) bot.sendMessage(msg.chat.id, Buying("🌳🌳Шишки Serious 6 - 90% Sat / 10% Ind - 5гр,", 1600, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 4) bot.sendMessage(msg.chat.id, Buying("🌳Шишки WW 1 гр.,", 300, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 5) bot.sendMessage(msg.chat.id, Buying("🌳🌳Шишки WW - 5гр,\n", 1300, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 6) bot.sendMessage(msg.chat.id, Buying("🍚🍚Амфетамин Фосфат 3гр.,", 850, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 7) bot.sendMessage(msg.chat.id, Buying("🌈 MDMA M&Ms - 230 mg - 2шт,", 750, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 8) bot.sendMessage(msg.chat.id, Buying("🌈MDMA Qdance - 230 mg - 2шт,", 750, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 9) bot.sendMessage(msg.chat.id, Buying("🍄Грибы Pink Buffalo 1гр,", 300, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 10) bot.sendMessage(msg.chat.id, Buying("🍄🍄Грибы Pink Buffalo 3гр,", 800, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 11) bot.sendMessage(msg.chat.id, Buying("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт", 250, money), {
+                                parse_mode: "HTML"
+                            })
+                            else if (compare == 12) bot.sendMessage(msg.chat.id, Buying("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт", 900, money), {
+                                parse_mode: "HTML"
+                            })
+                        })
+
                     }
-                })
-                bot.on("callback_query", function(data) {
+
+
+
+                })*/
+                /*var answer = data.data
+
+                console.log(answer)
+                if (answer > 0) {
+                    console.log("11")
+                    compare = answer
+                    console.log(compare)
+                }
+                if (data.data > 0) {
+                    bot.sendMessage(msg.chat.id, "Выберите способ оплаты", {
+                        reply_markup: {
+                            inline_keyboard: [
+                                [{
+                                    text: "EasyPay",
+                                    callback_data: "Easy"
+                                }, {
+                                    text: "Bitcoin",
+                                    callback_data: "BTC"
+                                }]
+                            ]
+                        }
+                    })
+                }*/
+
+                //})
+                /*bot.on("callback_query", function(datum) {
                     var money
-                    if (data.data == "Easy") money = 1
-                    else if (data.data == "BTC") money = 2
-                    console.log(data.data)
+                    if (datum.data == "Easy") money = 1
+                    else if (datum.data == "BTC") money = 2
+                    console.log(datum.data)
                     if ((money == 1) || (money == 2)) {
                         if (compare == 1) bot.sendMessage(msg.chat.id, Buying("🍚 Амфетамин Фосфат 1гр.,", 350, money), {
                             parse_mode: "HTML"
@@ -407,7 +608,7 @@ bot.on('message', msg => {
                     /*if(compare == 1 ) bot.sendMessage(msg.chat.id, Buying("Кокс", 105, money), {parse_mode: "HTML"})
                     else if(compare == 2 ) bot.sendMessage(msg.chat.id, Buying("ЛСД", 150, money), {parse_mode: "HTML"})
                     else if(compare == 3 ) bot.sendMessage(msg.chat.id, Buying("Неідомо", 125, money), {parse_mode: "HTML"})*/
-                })
+                //})
                 //bot.action("2")
                 //bot.on("callback_query", data => {
                 //cosole.log(data.data)
@@ -516,7 +717,7 @@ bot.on('message', msg => {
                 })*/
                 //})
                 /*sendGoodsByQuery(msg.chat.id)*/
-            }
+            //}
             break
         case kb.back:
             bot.sendMessage(msg.chat.id, "Головне меню", {
@@ -591,27 +792,140 @@ bot.onText(/\/office/, msg => {
         }
     })
 })
+bot.onText(/\/buy/, msg => {
+    bot.sendMessage(msg.chat.id, "Выберите способ оплаты", {
+        reply_markup: {
+            keyboard: keyboard.payment,
+            one_time_keyboard: true,
+            resize_keyboard: true
+        }
+    })
+})
+bot.onText(/Bitcoin/, msg => {
+    switch (msg.text) {
+        case kb.payment.BTC:
+            money = 2
+            console.log(money)
+            break
+        case kb.payment.EasyPay:
+            money = 1
+            console.log(money)
+            break
+    }
+        if(money > 0 && compare > 0){
+            if (compare == 1) bot.sendMessage(msg.chat.id, Buying("🍚 Амфетамин Фосфат 1гр.,", 350, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 2) bot.sendMessage(msg.chat.id, Buying("🌳 Шишки Serious 1 гр.,", 400, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 3) bot.sendMessage(msg.chat.id, Buying("🌳🌳Шишки Serious 6 - 90% Sat / 10% Ind - 5гр,", 1600, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 4) bot.sendMessage(msg.chat.id, Buying("🌳Шишки WW 1 гр.,", 300, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 5) bot.sendMessage(msg.chat.id, Buying("🌳🌳Шишки WW - 5гр,\n", 1300, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 6) bot.sendMessage(msg.chat.id, Buying("🍚🍚Амфетамин Фосфат 3гр.,", 850, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 7) bot.sendMessage(msg.chat.id, Buying("🌈 MDMA M&Ms - 230 mg - 2шт,", 750, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 8) bot.sendMessage(msg.chat.id, Buying("🌈MDMA Qdance - 230 mg - 2шт,", 750, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 9) bot.sendMessage(msg.chat.id, Buying("🍄Грибы Pink Buffalo 1гр,", 300, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 10) bot.sendMessage(msg.chat.id, Buying("🍄🍄Грибы Pink Buffalo 3гр,", 800, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 11) bot.sendMessage(msg.chat.id, Buying("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт", 250, money), {
+                parse_mode: "HTML"
+            })
+            else if (compare == 12) bot.sendMessage(msg.chat.id, Buying("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт", 900, money), {
+                parse_mode: "HTML"
+            })
+        }
+})
+bot.onText(/EasyPay/, msg => {
+    switch (msg.text) {
+        case kb.payment.BTC:
+            money = 2
+            console.log(money)
+            break
+        case kb.payment.EasyPay:
+            money = 1
+            console.log(money)
+            break
+    }
+    if(money > 0 && compare > 0){
+        if (compare == 1) bot.sendMessage(msg.chat.id, Buying("🍚 Амфетамин Фосфат 1гр.,", 350, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 2) bot.sendMessage(msg.chat.id, Buying("🌳 Шишки Serious 1 гр.,", 400, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 3) bot.sendMessage(msg.chat.id, Buying("🌳🌳Шишки Serious 6 - 90% Sat / 10% Ind - 5гр,", 1600, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 4) bot.sendMessage(msg.chat.id, Buying("🌳Шишки WW 1 гр.,", 300, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 5) bot.sendMessage(msg.chat.id, Buying("🌳🌳Шишки WW - 5гр,\n", 1300, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 6) bot.sendMessage(msg.chat.id, Buying("🍚🍚Амфетамин Фосфат 3гр.,", 850, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 7) bot.sendMessage(msg.chat.id, Buying("🌈 MDMA M&Ms - 230 mg - 2шт,", 750, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 8) bot.sendMessage(msg.chat.id, Buying("🌈MDMA Qdance - 230 mg - 2шт,", 750, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 9) bot.sendMessage(msg.chat.id, Buying("🍄Грибы Pink Buffalo 1гр,", 300, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 10) bot.sendMessage(msg.chat.id, Buying("🍄🍄Грибы Pink Buffalo 3гр,", 800, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 11) bot.sendMessage(msg.chat.id, Buying("♦️👁‍🗨♦️LSD-25 160 mkg -1 шт", 250, money), {
+            parse_mode: "HTML"
+        })
+        else if (compare == 12) bot.sendMessage(msg.chat.id, Buying("👁‍🗨♦️👁‍🗨LSD-25 160 mkg -5 шт", 900, money), {
+            parse_mode: "HTML"
+        })
+    }
+})
 bot.onText(/\/help/, msg => {
-    bot.sendMessage(helper.getChatId(msg), "Добро пожаловать! \n" +
-        "Уважаемый клиент, будьте внимательны при оплате💰 и выборе✔️ товара.\n" +
-        "Перед покупкой товара, бот предложит Вам город, товар и удобный для Вас район, после чего, выдаст реквизиты для оплаты.\n" +
-        "Внимательно перед покупкой проверяйте товар и выбранный район. Обязательно записывайте реквизиты для оплаты (номер кошелька и комментарий).\n" +
-        "\n" +
-        "При оплате, Вам необходимо обязательно указать  комментарий, который выдал Вам бот, иначе оплата не будет засчитана в автоматическом режиме и Вы не получите адрес.\n" +
-        "Всегда записывайте номер заказа и комментарий, с помощью них, вы сможете узнать статус заказа (получить адрес) в любой момент и с любого устройства. Сохраняйте чек до тех пор, пока не получили адрес. Присутствует возможность производить несколько платежей с одним комментарием. Платежи суммируются и в случае, если сумма полная - Вы получаете свой адрес.\n" +
-        "Будьте внимательны, кошелек, комментарий и сумма должны быть точными. Если возникли какие-либо проблемы - обращайтесь к оператору.\n" +
-        "\n" +
-        "После внесения оплаты, нажмите кнопку проверки платежа и если Ваша оплата будет найдена - Вы получите адрес в автоматическом режиме.\n" +
-        "\n" +
-        "Для того, чтобы вернуться на стартовую страницу к выбору городов, просто нажмите /start или напишите любое сообщение.\n" +
-        "\n" +
-        "Приятных покупок!🚀🚀🚀", {
+    if(Office > 0){
+        bot.sendMessage(helper.getChatId(msg), "Добро пожаловать! \n" +
+            "Уважаемый клиент, будьте внимательны при оплате💰 и выборе✔️ товара.\n" +
+            "Перед покупкой товара, бот предложит Вам город, товар и удобный для Вас район, после чего, выдаст реквизиты для оплаты.\n" +
+            "Внимательно перед покупкой проверяйте товар и выбранный район. Обязательно записывайте реквизиты для оплаты (номер кошелька и комментарий).\n" +
+            "\n" +
+            "При оплате, Вам необходимо обязательно указать  комментарий, который выдал Вам бот, иначе оплата не будет засчитана в автоматическом режиме и Вы не получите адрес.\n" +
+            "Всегда записывайте номер заказа и комментарий, с помощью них, вы сможете узнать статус заказа (получить адрес) в любой момент и с любого устройства. Сохраняйте чек до тех пор, пока не получили адрес. Присутствует возможность производить несколько платежей с одним комментарием. Платежи суммируются и в случае, если сумма полная - Вы получаете свой адрес.\n" +
+            "Будьте внимательны, кошелек, комментарий и сумма должны быть точными. Если возникли какие-либо проблемы - обращайтесь к оператору.\n" +
+            "\n" +
+            "После внесения оплаты, нажмите кнопку проверки платежа и если Ваша оплата будет найдена - Вы получите адрес в автоматическом режиме.\n" +
+            "\n" +
+            "Для того, чтобы вернуться на стартовую страницу к выбору городов, просто нажмите /start или напишите любое сообщение.\n" +
+            "\n" +
+            "Приятных покупок!🚀🚀🚀", {
             reply_markup: {
                 keyboard: keyboard.home,
                 one_time_keyboard: true,
                 resize_keyboard: true
             }
         })
+    }else{
+        bot.sendMessage(msg.chat.id, "Вы не выбрали район, пожалуйста сделайте это")
+    }
 })
 /*function sendGoodsByQuery(msg.chat.id, query) {
     Good.find(query).then(goods => {
@@ -686,4 +1000,22 @@ function Buying(Name, price, value) {
     if (value === 1) return Easy
     else if (value === 2) return BTC
 
+}
+
+function payment() {
+    var price = {
+        reply_markup: {
+            inline_keyboard: [
+                [{
+                    text: "EasyPay",
+                    callback_data: "Easy"
+                }, {
+                    text: "Bitcoin",
+                    callback_data: "BTC"
+                }]
+            ]
+        },
+        parse_mode: "HTML"
+    }
+    return price
 }
