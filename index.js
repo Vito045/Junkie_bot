@@ -6,7 +6,7 @@ const keyboard = require("./keyboard")
 const EasyPayWallet = "28828833"
 const BitcoinWallet = "13Bi9FsmcFJnFtPJSCkAyXB2cy85YAnrPw"
 
-const TOKEN = "634065729:AAGQ7B_lSE9JlDYmWVrhvMv7Y5uof2OyBA"
+const TOKEN = "634065729:AAGQ7LB_lSE9JlDYmWVrhvMv7Y5uof2OyBA"
 
 helper.logStart()
 

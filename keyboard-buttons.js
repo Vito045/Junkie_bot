@@ -25,6 +25,10 @@ module.exports = {
         office: "🚚 Вибор района",
         back: "🔙 Назад"
     },
+    payment: {
+        BTC: "Bitcoin",
+        EasyPay: "EasyPay"
+    },
     office: "🚚 Вибор района",
     back: "🔙 Назад"
 }
