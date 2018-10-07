@@ -14,6 +14,7 @@ module.exports = {
         [kb.offices.Off9, kb.offices.Off10, kb.offices.Off11, kb.offices.Off12]
     ],
     settings: [
+        [kb.settings.city],
         [kb.settings.office],
         [kb.back]
     ],
@@ -23,6 +24,10 @@ module.exports = {
     payment: [
         [kb.payment.BTC, kb.payment.EasyPay],
         [kb.back]
+    ],
+    cities: [
+        [kb.cities.kyiv],
+        [kb.cities.lviv, kb.cities.odessa],
+        [kb.cities.kharkiv, kb.cities.lutsk]
     ]
-
 }
