@@ -22,8 +22,7 @@ module.exports = {
         Off15: "15"
     },
     settings: {
-        city: "🏠 Вибор города",
-        office: "🚚 Вибор района",
+        city: "🏠 Вибор города/района",
         back: "🔙 Назад"
     },
     payment: {
