@@ -12,13 +12,10 @@ const bot = new Telegraf(config.TOKEN);
 
 var NodeGeocoder = require('node-geocoder');
 
-const request = require('request');
-
 var temperature = (value) => {
     return Math.round((value - 32) * 5 / 9)
 };
 
-const request = require('request')
 
 var geocodeAddress = (address, callback) => {
     var encodedAddress = encodeURIComponent(address);
